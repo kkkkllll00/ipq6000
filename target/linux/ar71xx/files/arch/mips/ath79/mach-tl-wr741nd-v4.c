@@ -142,6 +142,7 @@ static void __init tl_ap121_setup(void)
 				    AR933X_GPIO_FUNC_ETH_SWITCH_LED3_EN |
 				    AR933X_GPIO_FUNC_ETH_SWITCH_LED4_EN);
 
+	add ath79_register_usb();
 	ath79_register_m25p80(&tl_wr741ndv4_flash_data);
 	ath79_init_mac(ath79_eth0_data.mac_addr, mac, 1);
 	ath79_init_mac(ath79_eth1_data.mac_addr, mac, -1);
