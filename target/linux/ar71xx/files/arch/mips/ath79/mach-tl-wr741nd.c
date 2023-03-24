@@ -18,6 +18,7 @@
 #include "dev-leds-gpio.h"
 #include "dev-m25p80.h"
 #include "machtypes.h"
+#include "dev-usb.h"
 
 #define TL_WR741ND_GPIO_LED_QSS		0
 #define TL_WR741ND_GPIO_LED_SYSTEM	1
@@ -122,6 +123,9 @@ static void __init tl_wr741nd_setup(void)
 
 	/* WAN port */
 	ath79_register_eth(0);
+	
+	/* USB */
+   	ath79_register_usb();
 
 	ap9x_pci_setup_wmac_led_pin(0, 1);
 	ap91_pci_init(ee, mac);
